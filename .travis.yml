@@ -1,0 +1,12 @@
++language: go
++
++go:
++  - 1.x
++
++services:
++  - docker
++
++script:
++  - docker build -t comp698-final .
++  - docker run -d -P --rm --name functional_test comp698-final
++  - bash functional-test.sh
