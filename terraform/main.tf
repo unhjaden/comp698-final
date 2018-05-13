@@ -43,17 +43,17 @@ resource "google_compute_instance_template" "instance_template_final_staging" {
     ]
   }
 
-  metadata {
-    gce-container-declaration = <<EOF
-spec:
-  containers:
-    - image: 'gcr.io/comp698-jah2009/github-unhjaden-comp698-final:33315d4d5b24e185e694a0289a2f7860bbe37cfc'
-      name: service-container
-      stdin: false
-      tty: false
-  restartPolicy: Always
-EOF
-  }
+#   metadata {
+#     gce-container-declaration = <<EOF
+# spec:
+#   containers:
+#     - image: 'gcr.io/comp698-jah2009/github-unhjaden-comp698-final:33315d4d5b24e185e694a0289a2f7860bbe37cfc'
+#       name: service-container
+#       stdin: false
+#       tty: false
+#   restartPolicy: Always
+# EOF
+#   }
 }
 
 resource "google_compute_instance_group_manager" "final-staging" {
