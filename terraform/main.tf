@@ -10,7 +10,7 @@ provider "google" {
   region = "us-central1"
 }
 
-resource "google_compute_instance_template" "instance_template_staging" {
+resource "google_compute_instance_template" "instance_template_final_staging" {
   name  = "instance-template-final-staging"
   machine_type = "f1-micro"
   region       = "us-central1"
@@ -58,7 +58,7 @@ EOF
 
 resource "google_compute_instance_group_manager" "staging" {
   name        = "instance-group-manager-staging"
-  instance_template  = "${google_compute_instance_template.instance_template_staging.self_link}"
+  instance_template  = "${google_compute_instance_template.instance_template_final_staging.self_link}"
   base_instance_name = "staging-"
   zone               = "us-central1-f"
   target_size        = "1"
