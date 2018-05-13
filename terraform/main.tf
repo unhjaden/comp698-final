@@ -11,7 +11,7 @@ provider "google" {
 }
 
 resource "google_compute_instance_template" "instance_template_staging" {
-  name  = "instance-template-staging"
+  name  = "instance-template-final-staging"
   machine_type = "f1-micro"
   region       = "us-central1"
   project      = "comp698-jah2009"
