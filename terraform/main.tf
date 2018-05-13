@@ -47,7 +47,7 @@ resource "google_compute_instance_template" "instance_template_staging" {
     gce-container-declaration = <<EOF
 spec:
   containers:
-    - image: 'gcr.io/comp698-jah2009/github-unhjaden-my-web-server:2d9562329a267af734114f04c036f2ec9db475f1'
+    - image: 'gcr.io/comp698-jah2009/github-unhjaden-comp698-final:e8d69515386693f9d22b10c701a19991a9eaf957'
       name: service-container
       stdin: false
       tty: false
@@ -59,7 +59,7 @@ EOF
 resource "google_compute_instance_group_manager" "staging" {
   name        = "instance-group-manager-staging"
   instance_template  = "${google_compute_instance_template.instance_template_staging.self_link}"
-  base_instance_name = "tf-staging"
+  base_instance_name = "staging-"
   zone               = "us-central1-f"
   target_size        = "1"
   project      = "comp698-jah2009"
@@ -67,6 +67,6 @@ resource "google_compute_instance_group_manager" "staging" {
 
 resource "google_storage_bucket" "image-store" {
   project  = "comp698-jah2009"
-  name     = "comp698-jadens-auto-bucket"
+  name     = "comp698-jadens-final-bucket"
   location = "us-central1"
 }
