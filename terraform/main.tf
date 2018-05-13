@@ -47,7 +47,7 @@ resource "google_compute_instance_template" "instance_template_final_staging" {
     gce-container-declaration = <<EOF
 spec:
   containers:
-    - image: 'gcr.io/comp698-jah2009/github-unhjaden-comp698-final:e8d69515386693f9d22b10c701a19991a9eaf957'
+    - image: 'gcr.io/comp698-jah2009/github-unhjaden-comp698-final:33315d4d5b24e185e694a0289a2f7860bbe37cfc'
       name: service-container
       stdin: false
       tty: false
