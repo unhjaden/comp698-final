@@ -56,7 +56,7 @@ EOF
   }
 }
 
-resource "google_compute_instance_group_manager" "staging" {
+resource "google_compute_instance_group_manager" "final-staging" {
   name        = "instance-group-manager-final-staging"
   instance_template  = "${google_compute_instance_template.instance_template_final_staging.self_link}"
   base_instance_name = "staging-"
