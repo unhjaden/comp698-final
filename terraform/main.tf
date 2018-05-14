@@ -103,7 +103,7 @@ EOF
 
 resource "google_compute_instance_group_manager" "final-prod" {
   name        = "instance-group-manager-final-prod"
-  instance_template  = "${google_compute_instance_template.instance_template_prod.self_link}"
+  instance_template  = "${google_compute_instance_template.instance_template_final_prod.self_link}"
   base_instance_name = "prod"
   zone               = "us-central1-f"
   target_size        = "1"
