@@ -1,4 +1,3 @@
-
 terraform {
  backend "gcs" {
    project = "comp698-jah2009"
@@ -59,7 +58,7 @@ resource "google_compute_instance_template" "instance_template_final_staging" {
 resource "google_compute_instance_group_manager" "final-staging" {
   name        = "instance-group-manager-final-staging"
   instance_template  = "${google_compute_instance_template.instance_template_final_staging.self_link}"
-  base_instance_name = "staging"
+  base_instance_name = "stagingTEST"
   zone               = "us-central1-f"
   target_size        = "1"
   project      = "comp698-jah2009"
