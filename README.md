@@ -1,7 +1,7 @@
 # comp698-final
 
 ## Project Summary
-Summary
+This repository demonstrates my knowledge of the DevOps architecture taught in COMP698. The goal was to facilitate the process of pushing code developed locally into production without the need to login to the server and manually update files. 
 
 ### An outline of the intended workflow:
 1.	Code from a local repository is pushed to Github repo using git push origin <branch>
@@ -29,6 +29,7 @@ Summary
 
 ##### What is Git and why should I use it?
 Git is a VCS or Version Control System. Version Control Systems allow one or more users to establish what is known as a repository to store all project related files. Once added to a repository, multiple users can edit files without the need to communicate who is editing what file or what changes were made to the code of a specific file. Instead, multiple users can edit a file at the same time and often the changes from each person will be automatically added and merged by Git. Furthermore, a person who wants to join the project can clone or copy the entire repository to their computer in minutes. Overall, Version Control Systems inherently make it harder for human error to accidentally overwrite recent changes to code. 
+
 Additionally, Git is a major component of this repository’s devOps architecture because it provides a place to store code (that isn’t my just local machine) so that other pieces, such as Terraform, may reference it and publish it to the production and staging servers. This eliminates the need to login to each server to update the public-facing web application.
 
 ##### Why write an application in Golang?
@@ -74,9 +75,8 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
         * In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
 3.	Protect master branch by clicking Settings > Branches 
         * Click master and checked off the following settings:
-	
+
 	![img](https://i.imgur.com/HTVntgA.png)
-	
         * Click “Save Changes”
 
 ### Deploying Initial hello-world
@@ -157,7 +157,6 @@ Image name: `gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA`
 	![img](https://i.imgur.com/URq8GSy.png)
 	
 The build will take up to a few minutes to run through the various tests and then be built. The end result should look like this:
-
 	![img](https://i.imgur.com/NkAZF4m.png)
 
 ### Terraform Setup
@@ -180,7 +179,7 @@ The build will take up to a few minutes to run through the various tests and the
 ### Running a Docker container in the Terraformed instances 
 10.	In GCP Console, click Container Registry in the left sidebar and then “Images”
 11.	Click on github-unhjaden-comp698-final (your own project name)
-12.	Copy tag from latest (and only) image. An example one looks like this:
+12.	Copy tag from latest (and only) image. An example image name looks like this:
 
 `gcr.io/comp698-jah2009/github-unhjaden-comp698-final:e8d69515386693f9d22b10c701a19991a9eaf957`
 
