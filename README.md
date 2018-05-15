@@ -253,7 +253,8 @@ EOF
       - **git commit -m "updated tf file to use bootstrap container image"**
       - **git push origin add-tf-bootstrap**
       - Create PR
-		
+	
+This is what the new version will look like!	
   	![img](https://i.imgur.com/hOIfeuJ.png)
   
 ### Update Terraform to Deploy Full App to 1 Staging Server and "Hello World" to 1 Prod Server
