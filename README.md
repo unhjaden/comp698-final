@@ -37,12 +37,11 @@ Golang removes some of the complexity we would have to manage with some other la
 
 ###### What purpose does Travis CI serve?
 Travis CI is a Continuous Integration tool (hence the CI) and therefore helps prevent bad code from entering the environment and being pushed to production. Continuous Integration is the process of testing code using preconfigured scripts every time someone commits changes to the Git repository. In this project, the main_test.go file is what is utilized by Travis CI to determine whether or not the proposed build is stable. The following code checks to see if the Home page contains this entire string of text: COMP698 Final Project with Bootstrap. Otherwise, the test will not pass and the changes won’t be merged in Git.
-`
-expected := "COMP698 Final Project with Bootstrap"
-	if !strings.Contains(response.Body.String(), expected) {
-		t.Fatalf("Got: %s\nExpected: %s",
-			response.Body.String(), expected)
-`
+
+`expected := "COMP698 Final Project with Bootstrap"`
+	`if !strings.Contains(response.Body.String(), expected) {`
+		`t.Fatalf("Got: %s\nExpected: %s",`
+			`response.Body.String(), expected)`
 
 ###### What is the purpose of terraform??
 Terraform enables the scripting and therefore automation of creating virtualized resources. In this project, we created virtual machines, containers, and GCP storage buckets that could be destroyed and re-built in less than a minute AND have the process coincide with when changes were pushed to the master branch through the use of an auto-apply script. This saves time usually spent updating code versions on virtualized resources and minimizes the time it takes to revert back to a stable application version if bad code makes it all the way to the production server. If the inevitable does happen, one would only have to go into the main.tf file and change the container image to the most recent one that was working correctly.
@@ -67,13 +66,13 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 ### Creating & Cloning the Github Repo
 1.	Create public repository and initialized it with a README file
 2.	Cloning the repo
- - Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. cd C:\Users\Jaden\Documents\COMP698
- - Go back into Git repo’s main page and click “Clone or Download”
- - Copy URL to clipboard
- - In Cmder, run git clone https://github.com/unhjaden/comp698-final.git 
+        - Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. cd C:\Users\Jaden\Documents\COMP698
+        - Go back into Git repo’s main page and click “Clone or Download”
+        - Copy URL to clipboard
+        - In Cmder, run git clone https://github.com/unhjaden/comp698-final.git 
 3.	Protect master branch by clicking Settings > Branches 
- - Click master and checked off the following settings:
- - Click “Save Changes”
+        - Click master and checked off the following settings:
+        - Click “Save Changes”
 
 ### Deploying Initial hello-world
 1.	Open up source repo
@@ -85,10 +84,10 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 7.	Run git commit -m "added .go files to run initial hello world app" to commit these changes to the initial-hello-world branch
 8.	Create a pull request by running git push origin initial-hello-world. Sign in with Github account if necessary.
 9.	Go back into comp698-final repository on Github and click “New Pull Request”
- - Compare master branch to initial-hello-world
- - Click Merge Pull Request
- - Click Confirm Merge
- - Click Delete Branch
+        - Compare master branch to initial-hello-world
+        - Click Merge Pull Request
+        - Click Confirm Merge
+        - Click Delete Branch
  
  ### Add Dockerfile
 1.	Copy contents from source repo to Dockerfile (or write your own)
@@ -97,25 +96,25 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 4.	Add Dockerfile to local Git repo using git add Dockerfile
 5.	Run Git commit -m “added Dockerfile” to commit this change.
 6.	Create Pull Request in Git repo 
- - Click “New Pull Request”
- - Branch to compare master to: add-DockerFile
- - Click “Create Pull Request”
- - Confirm Merge
- - Delete branch
+        - Click “New Pull Request”
+        - Branch to compare master to: add-DockerFile
+        - Click “Create Pull Request”
+        - Confirm Merge
+        - Delete branch
  
 ### Add Travic CI Pull Request Validation
 1.	Create two new files from source provided: .travis.yml and functional-test.sh
 2.	Create a new branch and check it out.
- - git branch add-travisCI
- - git checkout add-travisCI
+        - git branch add-travisCI
+        - git checkout add-travisCI
 3.	Add Travis and functional test files to Git repo
- - git add .travis.yml
- - git add functional-test.sh
+        - git add .travis.yml
+        - git add functional-test.sh
 4.	Commit changes and push them to Github repo
- - git commit -m "added Travis CI Pull Request validation"
- - git push origin add-travisCI
+        - git commit -m "added Travis CI Pull Request validation"
+        - git push origin add-travisCI
 5.	New PR
- - Compare master to add-travisCI > Create PR > Merge PR > Confirm Merge > Delete Branch
+        - Compare master to add-travisCI > Create PR > Merge PR > Confirm Merge > Delete Branch
 
 ### Update Travis CI for PR validation and Functional Testing
 1.	Go to https://travis-ci.org/  
@@ -141,19 +140,19 @@ Image name: gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 
 ### Terraform Setup
 1. 	Create a storage bucket
- - Go to Storage within GCP Console from the left sidebar
- - Click “Create Bucket”
- - Choose a unique name. I chose comp698-final-jah2009.
- - Leave defaults and click “Create” 
+        - Go to Storage within GCP Console from the left sidebar
+        - Click “Create Bucket”
+        - Choose a unique name. I chose comp698-final-jah2009.
+        - Leave defaults and click “Create” 
 2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project’s top-level folder.
 3.	Create two files within the terraform folder: main.tf and apply-terraform.sh
 4.	 Add terraform files to Github repo by creating & checking out a branch 
- - git branch add-terraform
- - Git checkout add-terraform
+        - git branch add-terraform
+        - Git checkout add-terraform
 5.	Add all files within the new terraform folder to the local Git repo
- - git add terraform
+        - git add terraform
 6.	Commit changes and push them to the Github repo
- - git commit –m “added terraform config and auto-apply files”
+        - git commit –m “added terraform config and auto-apply files”
  
 ### Running a Docker container in the Terraformed instances 
 10.	In GCP Console, click Container Registry in the left sidebar and then “Images”
@@ -177,55 +176,55 @@ Image name: gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
   
 ### Add Bootstrap
 1.	Create and checkout a new branch
- - Git branch add-bootstrap
- - git checkout add-bootstrap
+        - Git branch add-bootstrap
+        - git checkout add-bootstrap
 2.	Update Dockerfile code and then add changes to local Git repo
- - git add Dockerfile
+        - git add Dockerfile
 3.	Update functional-test.sh code and then add changes to local Git repo
 4.	Git add functional-test.sh
 5.	Update main.go code and then add changes to local Git repo
- - Git add main.go
+        - Git add main.go
 6.	Create a folder called “static” and sub-folders inside using Cmder while within the top-level project folder. 
- - mkdir static
- - cd static
- - mkdir css
- - mkdir html
- - mkdir js
+        - mkdir static
+        - cd static
+        - mkdir css
+        - mkdir html
+        - mkdir js
 7.	Add all Bootstrap files to the static sub-folders (css, html, js)
 8.	Run cd .. to return to comp698-final folder
 i.	Add static folder to local Git repo
- - Git add static
+        - Git add static
 9.	Commit changes and push them to Github repo
- - Git commit -m “upgraded server to a bootstrap server”
- - Git push origin add-bootstrap
- - Create PR
+        - Git commit -m “upgraded server to a bootstrap server”
+        - Git push origin add-bootstrap
+        - Create PR
 10.	At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
- - Go back into GCP and click Container Registry > Images
- - Select the project and grab the tag from the latest image to put into the main.tf file
- - Create a new branch called add-tf-bootstrap and check it out
-  - Git branch add-tf-bootstrap
-  - git checkout add-tf-bootstrap
- - Stage changes made within terraform folder to local Git repo
-  - Git add terraform
- - Commit changes and push them to Git repo
-  - git commit -m "updated tf file to use bootstrap container image"
-  - git push origin add-tf-bootstrap
-  - Create PR
+        - Go back into GCP and click Container Registry > Images
+        - Select the project and grab the tag from the latest image to put into the main.tf file
+        - Create a new branch called add-tf-bootstrap and check it out
+                - Git branch add-tf-bootstrap
+                - git checkout add-tf-bootstrap
+        - Stage changes made within terraform folder to local Git repo
+                - Git add terraform
+        - Commit changes and push them to Git repo
+                - git commit -m "updated tf file to use bootstrap container image"
+                - git push origin add-tf-bootstrap
+                - Create PR
   
 ### Update Terraform to Deploy Full App to 1 Staging Server and “Hello World” to 1 Prod Server
 1. Create and checkout a new branch called add-prod
- - git branch add-prod
- - git checkout add-prod
+        - git branch add-prod
+        - git checkout add-prod
 2. Add another template resource named prod or production. I used “final-prod”
 3. Add another group manager resource and also give it a name like prod or production. 
 4. Put the container image file that used to display “hello world” in the new template’s spot for a container.
 5. Stage changes made within terraform folder
- - git add terraform
-xi.	Commit changes and push to Git repo
- - git commit –m “added production server which displays hello world application”
- - git push origin add-prod
- - Create PR
-6. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says “Hello, World!” The staging external IP link will bring you to a page that says “404 page not found”. However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
+        - git add terraform
+6.	Commit changes and push to Git repo
+        - git commit –m “added production server which displays hello world application”
+        - git push origin add-prod
+        - Create PR
+7. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says “Hello, World!” The staging external IP link will bring you to a page that says “404 page not found”. However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
 
 
 
