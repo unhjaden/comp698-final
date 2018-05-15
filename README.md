@@ -66,24 +66,28 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 ### Creating & Cloning the Github Repo
 1.	Create public repository and initialized it with a README file
 2.	Cloning the repo
-        - Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. cd C:\Users\Jaden\Documents\COMP698
-        - Go back into Git repo’s main page and click “Clone or Download”
-        - Copy URL to clipboard
-        - In Cmder, run git clone https://github.com/unhjaden/comp698-final.git 
+        * Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. 
+	  - **cd C:\Users\Jaden\Documents\COMP698**
+        * Go back into Git repo’s main page and click “Clone or Download”
+	![img](https://i.imgur.com/31zq88A.png)
+        * Copy URL to clipboard
+        * In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
 3.	Protect master branch by clicking Settings > Branches 
-        - Click master and checked off the following settings:
-        - Click “Save Changes”
+        * Click master and checked off the following settings:
+	![img](https://i.imgur.com/HTVntgA.png)
+        * Click “Save Changes”
 
 ### Deploying Initial hello-world
 1.	Open up source repo
 2.	Copy contents of main.go and main_test.go into new files and save them in comp698-final directory
-3.	Go back into Cmder and cd into comp698-final folder cd C:\Users\Jaden\Documents\COMP698\comp698-final
+3.	Go back into Cmder and cd into comp698-final folder 
+	- **cd C:\Users\Jaden\Documents\COMP698\comp698-final**
 4.	Create a new branch called initial-hello-world by running git branch initial-hello-world
-5.	Check out branch for editing by typing git checkout initial-hello-world
-6.	Add main.go and main_test.go to local Git repo by running git add main.go followed by git add main_test.go
-7.	Run git commit -m "added .go files to run initial hello world app" to commit these changes to the initial-hello-world branch
-8.	Create a pull request by running git push origin initial-hello-world. Sign in with Github account if necessary.
-9.	Go back into comp698-final repository on Github and click “New Pull Request”
+5.	Check out branch for editing by typing **git checkout initial-hello-world**
+6.	Add main.go and main_test.go to local Git repo by running **git add main.go** followed by **git add main_test.go**
+7.	Run **git commit -m "added .go files to run initial hello world app"** to commit these changes to the initial-hello-world branch
+8.	Push most recent changes to Git repo using **git push origin initial-hello-world**. Sign in with Github account if necessary.
+9.	Go back into comp698-final repository on Github and initialize a Pull Request by clicking “New Pull Request”
         - Compare master branch to initial-hello-world
         - Click Merge Pull Request
         - Click Confirm Merge
@@ -91,10 +95,10 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
  
  ### Add Dockerfile
 1.	Copy contents from source repo to Dockerfile (or write your own)
-2.	Run Git branch add-Dockerfile to create a new branch.
-3.	Run Git checkout add-Dockerfile to checkout your new branch for editing
-4.	Add Dockerfile to local Git repo using git add Dockerfile
-5.	Run Git commit -m “added Dockerfile” to commit this change.
+2.	Run **git branch add-Dockerfile** to create a new branch.
+3.	Run **git checkout add-Dockerfile** to checkout your new branch for editing
+4.	Add Dockerfile to local Git repo using **git add Dockerfile**
+5.	Run **git commit -m “added Dockerfile”** to commit this change.
 6.	Create Pull Request in Git repo 
         - Click “New Pull Request”
         - Branch to compare master to: add-DockerFile
@@ -105,14 +109,14 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 ### Add Travic CI Pull Request Validation
 1.	Create two new files from source provided: .travis.yml and functional-test.sh
 2.	Create a new branch and check it out.
-        - git branch add-travisCI
-        - git checkout add-travisCI
+        - **git branch add-travisCI**
+        - **git checkout add-travisCI**
 3.	Add Travis and functional test files to Git repo
-        - git add .travis.yml
-        - git add functional-test.sh
+        - **git add .travis.yml**
+        - **git add functional-test.sh**
 4.	Commit changes and push them to Github repo
-        - git commit -m "added Travis CI Pull Request validation"
-        - git push origin add-travisCI
+        - **git commit -m "added Travis CI Pull Request validation"**
+        - **git push origin add-travisCI**
 5.	New PR
         - Compare master to add-travisCI > Create PR > Merge PR > Confirm Merge > Delete Branch
 
@@ -129,19 +133,26 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 3.	Click “Build Triggers” in the left sidebar
 4.	Click “Add Trigger”
 5.	Select Github as the source
+	![img](https://i.imgur.com/Qq47cPj.png)
 6.	select "I consent to Google collecting and storing my authentication token in order to provide the connected repository service"
+	![img](https://i.imgur.com/b3fEa85.png)
 7.	Name: Build Master
 Trigger type: Branch
 Branch (regex): master
 Build configuration: Dockerfile
 Image name: gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
+	![img](https://i.imgur.com/KUXwyFK.png)
 8.	Click “Create Trigger”
-9.	From the main "Build triggers" page, Press "Run trigger" and select the master branch. The build will take up to a few minutes to run through the various tests and then be built. The end result should look like this:
+9.	From the main "Build triggers" page, Press "Run trigger" and select the master branch.
+	![img](https://i.imgur.com/URq8GSy.png)
+The build will take up to a few minutes to run through the various tests and then be built. The end result should look like this:
+	![img](https://i.imgur.com/NkAZF4m.png)
 
 ### Terraform Setup
 1. 	Create a storage bucket
         - Go to Storage within GCP Console from the left sidebar
         - Click “Create Bucket”
+	![img](https://i.imgur.com/UweTCPs.png)
         - Choose a unique name. I chose comp698-final-jah2009.
         - Leave defaults and click “Create” 
 2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project’s top-level folder.
@@ -158,71 +169,90 @@ Image name: gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 10.	In GCP Console, click Container Registry in the left sidebar and then “Images”
 11.	Click on github-unhjaden-comp698-final (your own project name)
 12.	Copy tag from latest (and only) image. An example one looks like this:
+
 `gcr.io/comp698-jah2009/github-unhjaden-comp698-final:e8d69515386693f9d22b10c701a19991a9eaf957`
+
 13.	Go into main.tf file and set this as the container image for the instance template
+```
+  metadata {
+    gce-container-declaration = <<EOF
+spec:
+  containers:
+    - image: 'gcr.io/comp698-jah2009/github-unhjaden-comp698-final:e8d69515386693f9d22b10c701a19991a9eaf957'
+      name: service-container
+      stdin: false
+      tty: false
+  restartPolicy: Always
+EOF
+  }
+```
 14.	Commit changes
 15.	Push to Github Repo and create a Pull Request.
 
 ### Setup and Auto-Apply Script
 1.	SSH into terraform-configuration VM using gcloud compute ssh terraform-configuration
 2.	Clone git repo by running git clone https://github.com/unhjaden/comp698-final.git (or the relevant link to you project)
-3.	CD into terraform directory using cd <project name>/terraform . EX: comp698-final/terraform
-4.	Run terraform init
-5.	Run crontab –e and select nano editor
+3.	Move into terraform directory using cd <project name>/terraform . *EX: comp698-final/terraform*
+4.	Run **terraform init**
+5.	Run **crontab –e** and select nano editor
 6.	Add the following line to the file.  (This means it will be run 5 times an hour)
+	
 `*/5 * * * * bash /home/[username]/[repo name]/terraform/apply-terraform.sh`
-7.	Check to make sure staging server is correctly running the Hello World app by going into VM instances and clicking on its external ip (use screenshot)
+
+7.	Check to make sure staging server is correctly running the Hello World app by going into VM instances and clicking on its external ip 
+	![img](https://i.imgur.com/JEPrRQZ.png)
 8.	This will bring up a web page that should say the words, “Hello, World!”
+	![img](https://i.imgur.com/4vasn3W.png)
   
 ### Add Bootstrap
 1.	Create and checkout a new branch
-        - Git branch add-bootstrap
-        - git checkout add-bootstrap
+        - **git branch add-bootstrap**
+        - **git checkout add-bootstrap**
 2.	Update Dockerfile code and then add changes to local Git repo
-        - git add Dockerfile
+        - **git add Dockerfile**
 3.	Update functional-test.sh code and then add changes to local Git repo
-4.	Git add functional-test.sh
+	- **git add functional-test.sh**
 5.	Update main.go code and then add changes to local Git repo
-        - Git add main.go
+        - **git add main.go**
 6.	Create a folder called “static” and sub-folders inside using Cmder while within the top-level project folder. 
-        - mkdir static
-        - cd static
-        - mkdir css
-        - mkdir html
-        - mkdir js
+        - **mkdir static**
+        - **cd static**
+        - **mkdir css**
+        - **mkdir html**
+        - **mkdir js**
 7.	Add all Bootstrap files to the static sub-folders (css, html, js)
-8.	Run cd .. to return to comp698-final folder
+8.	Run **cd ..** to return to comp698-final folder
 i.	Add static folder to local Git repo
-        - Git add static
+        - **git add static**
 9.	Commit changes and push them to Github repo
-        - Git commit -m “upgraded server to a bootstrap server”
-        - Git push origin add-bootstrap
+        - **git commit -m “upgraded server to a bootstrap server”**
+        - **git push origin add-bootstrap**
         - Create PR
 10.	At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
         - Go back into GCP and click Container Registry > Images
         - Select the project and grab the tag from the latest image to put into the main.tf file
         - Create a new branch called add-tf-bootstrap and check it out
-                - Git branch add-tf-bootstrap
-                - git checkout add-tf-bootstrap
+                - **git branch add-tf-bootstrap**
+                - **git checkout add-tf-bootstrap**
         - Stage changes made within terraform folder to local Git repo
-                - Git add terraform
+                - **git add terraform**
         - Commit changes and push them to Git repo
-                - git commit -m "updated tf file to use bootstrap container image"
-                - git push origin add-tf-bootstrap
+                - **git commit -m "updated tf file to use bootstrap container image"**
+                - **git push origin add-tf-bootstrap**
                 - Create PR
   
 ### Update Terraform to Deploy Full App to 1 Staging Server and “Hello World” to 1 Prod Server
 1. Create and checkout a new branch called add-prod
-        - git branch add-prod
-        - git checkout add-prod
+        - **git branch add-prod**
+        - **git checkout add-prod**
 2. Add another template resource named prod or production. I used “final-prod”
 3. Add another group manager resource and also give it a name like prod or production. 
 4. Put the container image file that used to display “hello world” in the new template’s spot for a container.
 5. Stage changes made within terraform folder
-        - git add terraform
+        - **git add terraform**
 6.	Commit changes and push to Git repo
-        - git commit –m “added production server which displays hello world application”
-        - git push origin add-prod
+        - **git commit –m “added production server which displays hello world application”**
+        - **git push origin add-prod**
         - Create PR
 7. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says “Hello, World!” The staging external IP link will bring you to a page that says “404 page not found”. However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
 
