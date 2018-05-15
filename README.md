@@ -107,17 +107,17 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
  
 ### Add Travic CI Pull Request Validation
 1.	Create two new files from source provided: .travis.yml and functional-test.sh
-2.	Create a new branch and check it out.
-        * **git branch add-travisCI**
-        * **git checkout add-travisCI**
-3.	Add Travis and functional test files to Git repo
-        * **git add .travis.yml**
-        * **git add functional-test.sh**
-4.	Commit changes and push them to Github repo
-        * **git commit -m "added Travis CI Pull Request validation"**
-        * **git push origin add-travisCI**
-5.	New PR
-        * Compare master to add-travisCI > Create PR > Merge PR > Confirm Merge > Delete Branch
+2. Create a new branch and check it out.
+   * **git branch add-travisCI**
+   * **git checkout add-travisCI**
+3. Add Travis and functional test files to Git repo
+   * **git add .travis.yml**
+   * **git add functional-test.sh**
+4. Commit changes and push them to Github repo
+   * **git commit -m "added Travis CI Pull Request validation"**
+   * **git push origin add-travisCI**
+5. New PR
+   * Compare master to add-travisCI > Create PR > Merge PR > Confirm Merge > Delete Branch
 
 ### Update Travis CI for PR validation and Functional Testing
 1.	Go to https://travis-ci.org/  
@@ -161,21 +161,21 @@ The build will take up to a few minutes to run through the various tests and the
 	![img](https://i.imgur.com/NkAZF4m.png)
 
 ### Terraform Setup
-1. 	Create a storage bucket
-        * Go to Storage within GCP Console from the left sidebar
-        * Click "Create Bucket"
-	![img](https://i.imgur.com/UweTCPs.png)
-        * Choose a unique name. I chose comp698-final-jah2009.
-        * Leave defaults and click "Create" 
+1. Create a storage bucket
+   * Go to Storage within GCP Console from the left sidebar
+   * Click "Create Bucket"
+   ![img](https://i.imgur.com/UweTCPs.png)
+   * Choose a unique name. I chose comp698-final-jah2009.
+   * Leave defaults and click "Create" 
 2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project's top-level folder.
 3.	Create two files within the terraform folder: main.tf and apply-terraform.sh
-4.	Add terraform files to Github repo by creating & checking out a branch 
-        * **git branch add-terraform**
-        * **git checkout add-terraform**
-5.	Add all files within the new terraform folder to the local Git repo
-        * **git add terraform**
-6.	Commit changes and push them to the Github repo
-        * **git commit –m “added terraform config and auto-apply files”**
+4. Add terraform files to Github repo by creating & checking out a branch 
+   * **git branch add-terraform**
+   * **git checkout add-terraform**
+5. Add all files within the new terraform folder to the local Git repo
+   * **git add terraform**
+6. Commit changes and push them to the Github repo
+   * **git commit –m “added terraform config and auto-apply files”**
  
 ### Running a Docker container in the Terraformed instances 
 10.	In GCP Console, click Container Registry in the left sidebar and then "Images"
@@ -220,41 +220,39 @@ EOF
 	![img](https://i.imgur.com/4vasn3W.png)
   
 ### Add Bootstrap
-1.	Create and checkout a new branch
-        * **git branch add-bootstrap**
-        * **git checkout add-bootstrap**
-2.	Update Dockerfile code and then add changes to local Git repo
-        * **git add Dockerfile**
-3.	Update functional-test.sh code and then add changes to local Git repo
-        * **git add functional-test.sh**
-5.	Update main.go code and then add changes to local Git repo
-        * **git add main.go**
-6.	Create a folder called "static" and sub-folders inside using Cmder while within the top-level project folder. 
-        * **mkdir static**
-        * **cd static**
-        * **mkdir css**
-        * **mkdir html**
-        * **mkdir js**
+1. Create and checkout a new branch
+   * **git branch add-bootstrap**
+   * **git checkout add-bootstrap**
+2. Update Dockerfile code and then add changes to local Git repo
+   * **git add Dockerfile**
+3. Update functional-test.sh code and then add changes to local Git repo
+   * **git add functional-test.sh**
+5. Update main.go code and then add changes to local Git repo
+   * **git add main.go**
+6. Create a folder called "static" and sub-folders inside using Cmder while within the top-level project folder. 
+   * **mkdir static**
+   * **cd static**
+   * **mkdir css**
+   * **mkdir html**
+   * **mkdir js**
 7.	Add all Bootstrap files to the static sub-folders (css, html, js)
 8.	Run **cd ..** to return to comp698-final folder
-i.	Add static folder to local Git repo
-        * **git add static**
-9.	Commit changes and push them to Github repo
-        * **git commit -m “upgraded server to a bootstrap server”**
-        * **git push origin add-bootstrap**
-        * Create PR
-10.	At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
-        * Go back into GCP and click Container Registry > Images
-        * Select the project and grab the tag from the latest image to put into the main.tf file
-        * Create a new branch called add-tf-bootstrap and check it out
-                - **git branch add-tf-bootstrap**
-                - **git checkout add-tf-bootstrap**
-        * Stage changes made within terraform folder to local Git repo
-                - **git add terraform**
-        * Commit changes and push them to Git repo
-                - **git commit -m "updated tf file to use bootstrap container image"**
-                - **git push origin add-tf-bootstrap**
-                - Create PR
+i. Add static folder to local Git repo
+   * **git add static**
+9. Commit changes and push them to Github repo
+   * **git commit -m “upgraded server to a bootstrap server”**
+   * **git push origin add-bootstrap**
+   * Create PR
+10. At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
+    * Go back into GCP and click Container Registry > Images
+    * Select the project and grab the tag from the latest image to put into the main.tf file
+    * Create a new branch called add-tf-bootstrap and check it out
+     - **git branch add-tf-bootstrap**
+     - **git checkout add-tf-bootstrap**
+    * Stage changes made within terraform folder to local Git repo
+     - **git commit -m "updated tf file to use bootstrap container image"**
+     - **git push origin add-tf-bootstrap**
+     - Create PR
 		
   	![img](https://i.imgur.com/1z9gn2Y.gifv)
   
@@ -267,10 +265,10 @@ i.	Add static folder to local Git repo
 4. Put the container image file that used to display "hello world" in the new template’s spot for a container.
 5. Stage changes made within terraform folder
    * **git add terraform**
-6.	Commit changes and push to Git repo
-        * **git commit –m "added production server which displays hello world application"**
-        * **git push origin add-prod**
-        * Create PR
+6. Commit changes and push to Git repo
+   * **git commit –m "added production server which displays hello world application"**
+   * **git push origin add-prod**
+   * Create PR
 7. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says "Hello, World!" The staging external IP link will bring you to a page that says "404 page not found". However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
 
 
