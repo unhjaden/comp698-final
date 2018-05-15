@@ -81,7 +81,7 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 2.	Copy contents of main.go and main_test.go into new files and save them in comp698-final directory
 3.	Go back into Cmder and move into comp698-final folder 
 	* **cd C:\Users\Jaden\Documents\COMP698\comp698-final**
-4.	Create a new branch called initial-hello-world by running git branch initial-hello-world
+4.	Create a new branch called initial-hello-world by running **git branch initial-hello-world**
 5.	Check out branch for editing by typing **git checkout initial-hello-world**
 6.	Add main.go and main_test.go to local Git repo by running **git add main.go** followed by **git add main_test.go**
 7.	Run **git commit -m "added .go files to run initial hello world app"** to commit these changes to the initial-hello-world branch
@@ -124,7 +124,7 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 2.	Sign in with GitHub account
 3.	Click Profile in the top right
 4.	Enable it on comp698-final repo by clicking on the slider
-5.	Click settings > More Options in the top right > "Trigger Build"
+5.	Click Settings > More Options in the top right > "Trigger Build"
 
 	![img](https://i.imgur.com/TqZPKMM.png)
 
