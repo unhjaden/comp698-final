@@ -17,16 +17,15 @@ Summary
 11.	The web application version on the production server now reflects the recent push to the Github repository. In other words, the code that was created on the developer’s local machine is now live.
 
 ### Diagram of the Architecture
-Pic
+![img](http://i67.tinypic.com/23tjvx0.png)
 
 ### Tools used
-- Cmder
-- Docker
-- GCloud
-- Github
-- Golang
-- Terraform
-- Travis CI
+- [Cmder](http://cmder.net/)
+- [Docker](https://www.docker.com/)
+- [GCloud](https://cloud.google.com/sdk/)
+- [Golang](https://golang.org/)
+- [Terraform](https://www.terraform.io/)
+- [Travis CI](https://travis-ci.org/)
 
 ###### What is Git and why should I use it?
 Git is a VCS or Version Control System. Version Control Systems allow one or more users to establish what is known as a repository to store all project related files. Once added to a repository, multiple users can edit files without the need to communicate who is editing what file or what changes were made to the code of a specific file. Instead, multiple users can edit a file at the same time and often the changes from each person will be automatically added and merged by Git. Furthermore, a person who wants to join the project can clone or copy the entire repository to their computer in minutes. Overall, Version Control Systems inherently make it harder for human error to accidentally overwrite recent changes to code. 
@@ -37,11 +36,12 @@ Golang removes some of the complexity we would have to manage with some other la
 
 ###### What purpose does Travis CI serve?
 Travis CI is a Continuous Integration tool (hence the CI) and therefore helps prevent bad code from entering the environment and being pushed to production. Continuous Integration is the process of testing code using preconfigured scripts every time someone commits changes to the Git repository. In this project, the main_test.go file is what is utilized by Travis CI to determine whether or not the proposed build is stable. The following code checks to see if the Home page contains this entire string of text: COMP698 Final Project with Bootstrap. Otherwise, the test will not pass and the changes won’t be merged in Git.
-
-`expected := "COMP698 Final Project with Bootstrap"`
+```
+expected := "COMP698 Final Project with Bootstrap"`
 	`if !strings.Contains(response.Body.String(), expected) {`
 		`t.Fatalf("Got: %s\nExpected: %s",`
-			`response.Body.String(), expected)`
+			`response.Body.String(), expected)
+```
 
 ###### What is the purpose of terraform??
 Terraform enables the scripting and therefore automation of creating virtualized resources. In this project, we created virtual machines, containers, and GCP storage buckets that could be destroyed and re-built in less than a minute AND have the process coincide with when changes were pushed to the master branch through the use of an auto-apply script. This saves time usually spent updating code versions on virtualized resources and minimizes the time it takes to revert back to a stable application version if bad code makes it all the way to the production server. If the inevitable does happen, one would only have to go into the main.tf file and change the container image to the most recent one that was working correctly.
