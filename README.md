@@ -228,23 +228,23 @@ EOF
    * **git add Dockerfile**
 3. Update functional-test.sh code and then add changes to local Git repo
    * **git add functional-test.sh**
-5. Update main.go code and then add changes to local Git repo
+4. Update main.go code and then add changes to local Git repo
    * **git add main.go**
-6. Create a folder called "static" and sub-folders inside using Cmder while within the top-level project folder. 
+5. Create a folder called "static" and sub-folders inside using Cmder while within the top-level project folder. 
    * **mkdir static**
    * **cd static**
    * **mkdir css**
    * **mkdir html**
    * **mkdir js**
-7.	Add all Bootstrap files to the static sub-folders (css, html, js)
-8.	Run **cd ..** to return to comp698-final folder
-9. Add static folder to local Git repo
-   * **git add static**
-10. Commit changes and push them to Github repo
+6.	Add all Bootstrap files to the static sub-folders (css, html, js)
+7.	Run **cd ..** to return to comp698-final folder
+8. Add static folder to local Git repo
+   * **git add static** 
+9. Commit changes and push them to Github repo
    * **git commit -m “upgraded server to a bootstrap server”**
    * **git push origin add-bootstrap**
    * Create PR
-11. At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
+10. At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
     * Go back into GCP and click Container Registry > Images
     * Select the project and grab the tag from the latest image to put into the main.tf file
     * Create a new branch called add-tf-bootstrap and check it out
