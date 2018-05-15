@@ -65,22 +65,21 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 
 ### Creating & Cloning the Github Repo
 1.	Create public repository and initialized it with a README file
-2. Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. 
+2. Open Cmder and move into top-level folder where you want to put your local copy of the repo. 
    * **cd C:\Users\Jaden\Documents\COMP698**
-   * Go back into Git repo’s main page and click “Clone or Download”
+3. Go back into Git repo’s main page and click “Clone or Download”
 	![img](https://i.imgur.com/31zq88A.png)
-   * Copy URL to clipboard
-   * In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
-3.	Protect master branch by clicking Settings > Branches 
+4. Copy URL to clipboard
+5. In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
+6.	Protect master branch by clicking Settings > Branches 
         * Click master and checked off the following settings:
-
 	![img](https://i.imgur.com/HTVntgA.png)
         * Click “Save Changes”
 
 ### Deploying Initial hello-world
 1.	Open up source repo
 2.	Copy contents of main.go and main_test.go into new files and save them in comp698-final directory
-3.	Go back into Cmder and cd into comp698-final folder 
+3.	Go back into Cmder and move into comp698-final folder 
 	* **cd C:\Users\Jaden\Documents\COMP698\comp698-final**
 4.	Create a new branch called initial-hello-world by running git branch initial-hello-world
 5.	Check out branch for editing by typing **git checkout initial-hello-world**
@@ -138,7 +137,7 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 
 	![img](https://i.imgur.com/Qq47cPj.png)
 	
-6.	select "I consent to Google collecting and storing my authentication token in order to provide the connected repository service"
+6.	Select "I consent to Google collecting ..."
 
 	![img](https://i.imgur.com/b3fEa85.png)
 	
@@ -227,7 +226,7 @@ EOF
 2.	Update Dockerfile code and then add changes to local Git repo
         * **git add Dockerfile**
 3.	Update functional-test.sh code and then add changes to local Git repo
-	* **git add functional-test.sh**
+        * **git add functional-test.sh**
 5.	Update main.go code and then add changes to local Git repo
         * **git add main.go**
 6.	Create a folder called “static” and sub-folders inside using Cmder while within the top-level project folder. 
@@ -261,13 +260,13 @@ i.	Add static folder to local Git repo
   
 ### Update Terraform to Deploy Full App to 1 Staging Server and “Hello World” to 1 Prod Server
 1. Create and checkout a new branch called add-prod
-        * **git branch add-prod**
-        * **git checkout add-prod**
+   * **git branch add-prod**
+   * **git checkout add-prod**
 2. Add another template resource named prod or production. I used “final-prod”
 3. Add another group manager resource and also give it a name like prod or production. 
 4. Put the container image file that used to display “hello world” in the new template’s spot for a container.
 5. Stage changes made within terraform folder
-        * **git add terraform**
+   * **git add terraform**
 6.	Commit changes and push to Git repo
         * **git commit –m “added production server which displays hello world application”**
         * **git push origin add-prod**
