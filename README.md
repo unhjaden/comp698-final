@@ -86,11 +86,11 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 6.	Add main.go and main_test.go to local Git repo by running **git add main.go** followed by **git add main_test.go**
 7.	Run **git commit -m "added .go files to run initial hello world app"** to commit these changes to the initial-hello-world branch
 8.	Push most recent changes to Git repo using **git push origin initial-hello-world**. Sign in with Github account if necessary.
-9.	Go back into comp698-final repository on Github and initialize a Pull Request by clicking "New Pull Request"
-        - Compare master branch to initial-hello-world
-        - Click Merge Pull Request
-        - Click Confirm Merge
-        - Click Delete Branch
+9. Go back into comp698-final repository on Github and initialize a Pull Request by clicking "New Pull Request"
+   - Compare master branch to initial-hello-world
+   - Click Merge Pull Request
+   - Click Confirm Merge
+   - Click Delete Branch
  
  ### Add Dockerfile
 1.	Copy contents from source repo to Dockerfile (or write your own)
@@ -98,12 +98,12 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 3.	Run **git checkout add-Dockerfile** to checkout your new branch for editing
 4.	Add Dockerfile to local Git repo using **git add Dockerfile**
 5.	Run **git commit -m "added Dockerfile"** to commit this change.
-6.	Create Pull Request in Git repo 
-        - Click "New Pull Request"
-        - Branch to compare master to: add-DockerFile
-        - Click "Create Pull Request"
-        - Confirm Merge
-        - Delete branch
+6. Create Pull Request in Git repo 
+   - Click "New Pull Request"
+   - Branch to compare master to: add-DockerFile
+   - Click "Create Pull Request"
+   - Confirm Merge
+   - Delete branch
  
 ### Add Travic CI Pull Request Validation
 1.	Create two new files from source provided: .travis.yml and functional-test.sh
