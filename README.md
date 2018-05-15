@@ -143,13 +143,14 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 	
 7.	Name: Build Master
 
-Trigger type: Branch
+	Trigger type: Branch
 
-Branch (regex): master
+	Branch (regex): master
 
-Build configuration: Dockerfile
+	Build configuration: Dockerfile
 
-Image name: `gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA`
+	Image name: `gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA`
+	
 	![img](https://i.imgur.com/KUXwyFK.png)
 	
 8.	Click "Create Trigger"
@@ -247,12 +248,12 @@ EOF
     * Go back into GCP and click Container Registry > Images
     * Select the project and grab the tag from the latest image to put into the main.tf file
     * Create a new branch called add-tf-bootstrap and check it out
-      - **git branch add-tf-bootstrap**
-      - **git checkout add-tf-bootstrap**
+          - **git branch add-tf-bootstrap**
+          - **git checkout add-tf-bootstrap**
     * Stage changes made within terraform folder to local Git repo
-      - **git commit -m "updated tf file to use bootstrap container image"**
-      - **git push origin add-tf-bootstrap**
-      - Create PR
+          - **git commit -m "updated tf file to use bootstrap container image"**
+          - **git push origin add-tf-bootstrap**
+          - Create PR
 	
 This is what the new version will look like!	
   	![img](https://i.imgur.com/hOIfeuJ.png)
