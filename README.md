@@ -237,24 +237,24 @@ EOF
    * **mkdir js**
 7.	Add all Bootstrap files to the static sub-folders (css, html, js)
 8.	Run **cd ..** to return to comp698-final folder
-i. Add static folder to local Git repo
+9. Add static folder to local Git repo
    * **git add static**
-9. Commit changes and push them to Github repo
+10. Commit changes and push them to Github repo
    * **git commit -m “upgraded server to a bootstrap server”**
    * **git push origin add-bootstrap**
    * Create PR
-10. At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
+11. At this stage, the server staging-#### (randomized characters after the base instance name) will still be running the Hello World application because we haven’t updated the container image in terraform. To remedy this, 
     * Go back into GCP and click Container Registry > Images
     * Select the project and grab the tag from the latest image to put into the main.tf file
     * Create a new branch called add-tf-bootstrap and check it out
-     - **git branch add-tf-bootstrap**
-     - **git checkout add-tf-bootstrap**
+      - **git branch add-tf-bootstrap**
+      - **git checkout add-tf-bootstrap**
     * Stage changes made within terraform folder to local Git repo
-     - **git commit -m "updated tf file to use bootstrap container image"**
-     - **git push origin add-tf-bootstrap**
-     - Create PR
+      - **git commit -m "updated tf file to use bootstrap container image"**
+      - **git push origin add-tf-bootstrap**
+      - Create PR
 		
-  	![img](https://i.imgur.com/1z9gn2Y.gifv)
+  	![img](https://i.imgur.com/hOIfeuJ.png)
   
 ### Update Terraform to Deploy Full App to 1 Staging Server and "Hello World" to 1 Prod Server
 1. Create and checkout a new branch called add-prod
