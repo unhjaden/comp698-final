@@ -47,7 +47,6 @@ expected := "COMP698 Final Project with Bootstrap"`
 ##### What is the purpose of terraform??
 Terraform enables the scripting and therefore automation of creating virtualized resources. In this project, we created virtual machines, containers, and GCP storage buckets that could be destroyed and re-built in less than a minute AND have the process coincide with when changes were pushed to the master branch through the use of an auto-apply script. This saves time usually spent updating code versions on virtualized resources and minimizes the time it takes to revert back to a stable application version if bad code makes it all the way to the production server. If the inevitable does happen, one would only have to go into the main.tf file and change the container image to the most recent one that was working correctly.
 
-
 ##### Why use virtualized resources?
 Virtualized resources can be hosted in the cloud (in this case GCloud), nearly every attribute is customizable (Operating System, storage, network interfaces), storage can be increased to fit demand, and they can be created/destroyed manually or through the use of scripts in mere minutes. 
 
@@ -66,13 +65,12 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 
 ### Creating & Cloning the Github Repo
 1.	Create public repository and initialized it with a README file
-2.	Cloning the repo
-        * Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. 
-	  - **cd C:\Users\Jaden\Documents\COMP698**
-        * Go back into Git repo’s main page and click “Clone or Download”
+2. Open Cmder and cd’d into top-level folder where you want to put your local copy of the repo. 
+   * **cd C:\Users\Jaden\Documents\COMP698**
+   * Go back into Git repo’s main page and click “Clone or Download”
 	![img](https://i.imgur.com/31zq88A.png)
-        * Copy URL to clipboard
-        * In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
+   * Copy URL to clipboard
+   * In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
 3.	Protect master branch by clicking Settings > Branches 
         * Click master and checked off the following settings:
 
@@ -145,9 +143,13 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 	![img](https://i.imgur.com/b3fEa85.png)
 	
 7.	Name: Build Master
+
 Trigger type: Branch
+
 Branch (regex): master
+
 Build configuration: Dockerfile
+
 Image name: `gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA`
 	![img](https://i.imgur.com/KUXwyFK.png)
 	
@@ -168,7 +170,7 @@ The build will take up to a few minutes to run through the various tests and the
         * Leave defaults and click “Create” 
 2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project’s top-level folder.
 3.	Create two files within the terraform folder: main.tf and apply-terraform.sh
-4.	 Add terraform files to Github repo by creating & checking out a branch 
+4.	Add terraform files to Github repo by creating & checking out a branch 
         * **git branch add-terraform**
         * **git checkout add-terraform**
 5.	Add all files within the new terraform folder to the local Git repo
