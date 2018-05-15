@@ -72,7 +72,7 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 4. Copy URL to clipboard
 5. In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
 6.	Protect master branch by clicking Settings > Branches
-7. Click master and checked off the following settings:
+7. Click "master" and checked off the following settings:
 	![img](https://i.imgur.com/HTVntgA.png)
 8. Click "Save Changes"
 
@@ -88,9 +88,9 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 8.	Push most recent changes to Git repo using **git push origin initial-hello-world**. Sign in with Github account if necessary.
 9. Go back into comp698-final repository on Github and initialize a Pull Request by clicking "New Pull Request"
    - Compare master branch to initial-hello-world
-   - Click Merge Pull Request
-   - Click Confirm Merge
-   - Click Delete Branch
+   - Click "Merge Pull Request"
+   - Click "Confirm Merge"
+   - Click "Delete Branch"
  
  ### Add Dockerfile
 1.	Copy contents from source repo to Dockerfile (or write your own)
