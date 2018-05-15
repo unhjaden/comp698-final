@@ -67,14 +67,14 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 1.	Create public repository and initialized it with a README file
 2. Open Cmder and move into top-level folder where you want to put your local copy of the repo. 
    * **cd C:\Users\Jaden\Documents\COMP698**
-3. Go back into Git repo’s main page and click “Clone or Download”
+3. Go back into Git repo’s main page and click "Clone or Download"
 	![img](https://i.imgur.com/31zq88A.png)
 4. Copy URL to clipboard
 5. In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
 6.	Protect master branch by clicking Settings > Branches
 7. Click master and checked off the following settings:
 	![img](https://i.imgur.com/HTVntgA.png)
-8. Click “Save Changes”
+8. Click "Save Changes"
 
 ### Deploying Initial hello-world
 1.	Open up source repo
@@ -87,10 +87,10 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 7.	Run **git commit -m "added .go files to run initial hello world app"** to commit these changes to the initial-hello-world branch
 8.	Push most recent changes to Git repo using **git push origin initial-hello-world**. Sign in with Github account if necessary.
 9.	Go back into comp698-final repository on Github and initialize a Pull Request by clicking "New Pull Request"
-        * Compare master branch to initial-hello-world
-        * Click Merge Pull Request
-        * Click Confirm Merge
-        * Click Delete Branch
+        - Compare master branch to initial-hello-world
+        - Click Merge Pull Request
+        - Click Confirm Merge
+        - Click Delete Branch
  
  ### Add Dockerfile
 1.	Copy contents from source repo to Dockerfile (or write your own)
@@ -99,11 +99,11 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 4.	Add Dockerfile to local Git repo using **git add Dockerfile**
 5.	Run **git commit -m "added Dockerfile"** to commit this change.
 6.	Create Pull Request in Git repo 
-        * Click "New Pull Request"
-        * Branch to compare master to: add-DockerFile
-        * Click "Create Pull Request"
-        * Confirm Merge
-        * Delete branch
+        - Click "New Pull Request"
+        - Branch to compare master to: add-DockerFile
+        - Click "Create Pull Request"
+        - Confirm Merge
+        - Delete branch
  
 ### Add Travic CI Pull Request Validation
 1.	Create two new files from source provided: .travis.yml and functional-test.sh
