@@ -168,7 +168,7 @@ The build will take up to a few minutes to run through the various tests and the
    ![img](https://i.imgur.com/UweTCPs.png)
    * Choose a unique name. I chose comp698-final-jah2009.
    * Leave defaults and click "Create" 
-2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project's top-level folder.
+2.	Create directory within comp698-final local repo called terraform by running **mkdir terraform** from within Cmder. You must be in the project's top-level folder.
 3.	Create two files within the terraform folder: main.tf and apply-terraform.sh
 4. Add terraform files to Github repo by creating & checking out a branch 
    * **git branch add-terraform**
@@ -202,7 +202,7 @@ EOF
 14.	Commit changes
 15.	Push to Github Repo and create a Pull Request.
 
-### Setup and Auto-Apply Script
+### Setup Auto-Apply Script
 1.	SSH into terraform-configuration VM using gcloud compute ssh terraform-configuration
 2.	Clone git repo by running **git clone https://github.com/unhjaden/comp698-final.git** (or the relevant link to you project)
 3.	Move into terraform directory using cd <project name>/terraform . *EX: comp698-final/terraform*
