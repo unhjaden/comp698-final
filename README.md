@@ -71,10 +71,10 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 	![img](https://i.imgur.com/31zq88A.png)
 4. Copy URL to clipboard
 5. In Cmder, run **git clone https://github.com/unhjaden/comp698-final.git**
-6.	Protect master branch by clicking Settings > Branches 
-        * Click master and checked off the following settings:
+6.	Protect master branch by clicking Settings > Branches
+7. Click master and checked off the following settings:
 	![img](https://i.imgur.com/HTVntgA.png)
-        * Click “Save Changes”
+8. Click “Save Changes”
 
 ### Deploying Initial hello-world
 1.	Open up source repo
@@ -86,7 +86,7 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 6.	Add main.go and main_test.go to local Git repo by running **git add main.go** followed by **git add main_test.go**
 7.	Run **git commit -m "added .go files to run initial hello world app"** to commit these changes to the initial-hello-world branch
 8.	Push most recent changes to Git repo using **git push origin initial-hello-world**. Sign in with Github account if necessary.
-9.	Go back into comp698-final repository on Github and initialize a Pull Request by clicking “New Pull Request”
+9.	Go back into comp698-final repository on Github and initialize a Pull Request by clicking "New Pull Request"
         * Compare master branch to initial-hello-world
         * Click Merge Pull Request
         * Click Confirm Merge
@@ -97,11 +97,11 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 2.	Run **git branch add-Dockerfile** to create a new branch.
 3.	Run **git checkout add-Dockerfile** to checkout your new branch for editing
 4.	Add Dockerfile to local Git repo using **git add Dockerfile**
-5.	Run **git commit -m “added Dockerfile”** to commit this change.
+5.	Run **git commit -m "added Dockerfile"** to commit this change.
 6.	Create Pull Request in Git repo 
-        * Click “New Pull Request”
+        * Click "New Pull Request"
         * Branch to compare master to: add-DockerFile
-        * Click “Create Pull Request”
+        * Click "Create Pull Request"
         * Confirm Merge
         * Delete branch
  
@@ -130,9 +130,9 @@ Containers are essentially a special type of Virtual Machine. Unlike other VMs, 
 
 ### Setting up automated build triggers 
 1.	Open the Container Registry page on Google Cloud Platform (GCP) Console 
-2.	Select Project and click “Open”
-3.	Click “Build Triggers” in the left sidebar
-4.	Click “Add Trigger”
+2.	Select Project and click "Open"
+3.	Click "Build Triggers" in the left sidebar
+4.	Click "Add Trigger"
 5.	Select Github as the source
 
 	![img](https://i.imgur.com/Qq47cPj.png)
@@ -152,7 +152,7 @@ Build configuration: Dockerfile
 Image name: `gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA`
 	![img](https://i.imgur.com/KUXwyFK.png)
 	
-8.	Click “Create Trigger”
+8.	Click "Create Trigger"
 9.	From the main "Build triggers" page, Press "Run trigger" and select the master branch.
 
 	![img](https://i.imgur.com/URq8GSy.png)
@@ -163,11 +163,11 @@ The build will take up to a few minutes to run through the various tests and the
 ### Terraform Setup
 1. 	Create a storage bucket
         * Go to Storage within GCP Console from the left sidebar
-        * Click “Create Bucket”
+        * Click "Create Bucket"
 	![img](https://i.imgur.com/UweTCPs.png)
         * Choose a unique name. I chose comp698-final-jah2009.
-        * Leave defaults and click “Create” 
-2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project’s top-level folder.
+        * Leave defaults and click "Create" 
+2.	Create directory within comp698-final local repo called terraform by running mkdir terraform from within Cmder. You must be in the project's top-level folder.
 3.	Create two files within the terraform folder: main.tf and apply-terraform.sh
 4.	Add terraform files to Github repo by creating & checking out a branch 
         * **git branch add-terraform**
@@ -178,7 +178,7 @@ The build will take up to a few minutes to run through the various tests and the
         * **git commit –m “added terraform config and auto-apply files”**
  
 ### Running a Docker container in the Terraformed instances 
-10.	In GCP Console, click Container Registry in the left sidebar and then “Images”
+10.	In GCP Console, click Container Registry in the left sidebar and then "Images"
 11.	Click on github-unhjaden-comp698-final (your own project name)
 12.	Copy tag from latest (and only) image. An example image name looks like this:
 
@@ -206,7 +206,7 @@ EOF
 2.	Clone git repo by running **git clone https://github.com/unhjaden/comp698-final.git** (or the relevant link to you project)
 3.	Move into terraform directory using cd <project name>/terraform . *EX: comp698-final/terraform*
 4.	Run **terraform init**
-5.	Run **crontab –e** and select nano editor
+5.	Run **crontab -e** and select nano editor
 6.	Add the following line to the file.  (This means it will be run 5 times an hour)
 	
 `*/5 * * * * bash /home/[username]/[repo name]/terraform/apply-terraform.sh`
@@ -215,7 +215,7 @@ EOF
 
 	![img](https://i.imgur.com/JEPrRQZ.png)
 	
-8.	This will bring up a web page that should say the words, “Hello, World!”
+8.	This will bring up a web page that should say the words, "Hello, World!"
 
 	![img](https://i.imgur.com/4vasn3W.png)
   
@@ -229,7 +229,7 @@ EOF
         * **git add functional-test.sh**
 5.	Update main.go code and then add changes to local Git repo
         * **git add main.go**
-6.	Create a folder called “static” and sub-folders inside using Cmder while within the top-level project folder. 
+6.	Create a folder called "static" and sub-folders inside using Cmder while within the top-level project folder. 
         * **mkdir static**
         * **cd static**
         * **mkdir css**
@@ -258,20 +258,20 @@ i.	Add static folder to local Git repo
 		
   	![img](https://i.imgur.com/1z9gn2Y.gifv)
   
-### Update Terraform to Deploy Full App to 1 Staging Server and “Hello World” to 1 Prod Server
+### Update Terraform to Deploy Full App to 1 Staging Server and "Hello World" to 1 Prod Server
 1. Create and checkout a new branch called add-prod
    * **git branch add-prod**
    * **git checkout add-prod**
-2. Add another template resource named prod or production. I used “final-prod”
+2. Add another template resource named prod or production. I used "final-prod"
 3. Add another group manager resource and also give it a name like prod or production. 
-4. Put the container image file that used to display “hello world” in the new template’s spot for a container.
+4. Put the container image file that used to display "hello world" in the new template’s spot for a container.
 5. Stage changes made within terraform folder
    * **git add terraform**
 6.	Commit changes and push to Git repo
-        * **git commit –m “added production server which displays hello world application”**
+        * **git commit –m "added production server which displays hello world application"**
         * **git push origin add-prod**
         * Create PR
-7. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says “Hello, World!” The staging external IP link will bring you to a page that says “404 page not found”. However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
+7. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says "Hello, World!" The staging external IP link will bring you to a page that says "404 page not found". However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
 
 
 
