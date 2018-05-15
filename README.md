@@ -273,8 +273,7 @@ This is what the new version will look like!
    * Create PR
 7. Now, you should see two VM instances in GCP: one prefixed with staging and one with prod. Clicking on the prod external IP link will bring you to a page that says "Hello, World!" The staging external IP link will bring you to a page that says "404 page not found". However, if you add /home to the URL of the staging application, you will be brought to a pretty template page styled with Bootstrap. 
 
-
-
+	![img](https://i.imgur.com/aTw6j5m.png)
 
 
 
